@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>College Application Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: #0a2a66;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav {
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0a2a66;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      color: #0a2a66;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #0a2a66;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #08305f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .success {
+      background: #e6f7e6;
+      padding: 15px;
+      border-left: 5px solid #2ecc71;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>College Application Portal</h1>
+  <p>Apply for Admission</p>
+</header>
+
+<nav>
+  <a href="#" onclick="showSection('home')">Home</a>
+  <a href="#" onclick="showSection('apply')">Apply</a>
+  <a href="#" onclick="showSection('status')">Application Status</a>
+  <a href="#" onclick="showSection('contact')">Contact</a>
+</nav>
+
+<main>
+
+  <section id="home" class="active">
+    <h2>Welcome</h2>
+    <p>
+      Welcome to the official college application portal. Complete your application
+      to be considered for admission.
+    </p>
+    <p>
+      Please ensure all information is accurate before submitting.
+    </p>
+  </section>
+
+  <section id="apply">
+    <h2>Application Form</h2>
+
+    <label>Full Name</label>
+    <input type="text" placeholder="John Doe">
+
+    <label>Email Address</label>
+    <input type="email" placeholder="example@email.com">
+
+    <label>Date of Birth</label>
+    <input type="date">
+
+    <label>Intended Major</label>
+    <select>
+      <option>Computer Science</option>
+      <option>Engineering</option>
+      <option>Business</option>
+      <option>Biology</option>
+      <option>Other</option>
+    </select>
+
+    <label>Personal Statement</label>
+    <textarea rows="5" placeholder="Tell us about yourself..."></textarea>
+
+    <button onclick="submitApplication()">Submit Application</button>
+
+    <div class="success" id="successMsg">
+      Application submitted successfully!
+    </div>
+  </section>
+
+  <section id="status">
+    <h2>Check Application Status</h2>
+    <p>
+      Enter your email to view your application status.
+    </p>
+
+    <input type="email" placeholder="example@email.com">
+    <button>Check Status</button>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Admissions</h2>
+    <p>Email: admissions@college.edu</p>
+    <p>Phone: (123) 456-7890</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 College Application Portal
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll("section").forEach(sec => {
+      sec.classList.remove("active");
+    });
+    document.getElementById(id).classList.add("active");
+  }
+
+  function submitApplication() {
+    document.getElementById("successMsg").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
