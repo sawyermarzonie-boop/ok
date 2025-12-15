@@ -1,0 +1,13 @@
+<script>
+function submitApplication() {
+  const personalStatement = document.querySelector("textarea").value.toLowerCase();
+
+  if (personalStatement.includes("yourmom")) {
+    // Open secret tab
+    window.open("https://example.com/secret", "_blank"); // Change URL to your secret page
+    alert("🎉 Secret tab unlocked!");
+  } else {
+    document.getElementById("successMsg").style.display = "block";
+  }
+}
+</script>
