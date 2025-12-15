@@ -1,0 +1,17 @@
+<script>
+function submitApplication() {
+  // Get the value from the Personal Statement textarea
+  const personalStatement = document.querySelector("textarea").value.toLowerCase();
+
+  // Check if it contains the secret phrase
+  if (personalStatement.includes("yourmom")) {
+    // Open secret tab (you can change the URL to anything)
+    window.open("https://example.com/secret", "_blank");
+    alert("🎉 Secret tab unlocked!");
+  } else {
+    // Normal success message
+    document.getElementById("successMsg").style.display = "block";
+  }
+}
+</script>
+<button type="button" onclick="submitApplication()">Submit Application</button>
