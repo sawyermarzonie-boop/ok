@@ -190,17 +190,31 @@
 </footer>
 
 <script>
-  function showSection(id) {
-    document.querySelectorAll("section").forEach(sec => {
-      sec.classList.remove("active");
-    });
-    document.getElementById(id).classList.add("active");
-  }
+  <script>
+function submitApplication() {
+  // Get the value from the Personal Statement textarea
+  const personalStatement = document.querySelector("textarea").value.toLowerCase();
 
-  function submitApplication() {
+  // Secret phrase check
+  if (personalStatement.includes("yourmom")) {
+    // Create a hidden tab/panel
+    alert("🎉 Secret tab unlocked!");
+    
+    // Optional: reveal hidden div on same page
+    let secretDiv = document.getElementById("secretAdmin");
+    if (!secretDiv) {
+      secretDiv = document.createElement("div");
+      secretDiv.id = "secretAdmin";
+      secretDiv.style.padding = "20px";
+      secretDiv.style.marginTop = "20px";
+      secretDiv.style.backgroundColor = "#ffd700";
+      secretDiv.innerHTML = "<h2>Secret Admin Panel</h2><p>Welcome to the secret area!</p>";
+      document.querySelector("main").appendChild(secretDiv);
+    }
+  } else {
+    // Normal success message
     document.getElementById("successMsg").style.display = "block";
   }
+}
 </script>
-
-</body>
-</html>
+<button type="button" onclick="submitApplication()">Submit Application</button>
